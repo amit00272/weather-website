@@ -7,6 +7,8 @@ const weather = require("./utility/weather")
 
 const app = express()
 
+const port = process.env.PORT || 3000 
+
 const publicDirectoryPath =  path.join(__dirname, '../public')
 const viewsDirectorypath =  path.join(__dirname, '../templates/views')
 const partialsDirectorypath =  path.join(__dirname, '../templates/partials')
@@ -78,6 +80,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server has started on port')
+app.listen(port, () => {
+    console.log('Server has started on port ' + port)
 })
